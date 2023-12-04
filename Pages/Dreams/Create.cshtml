@@ -1,0 +1,49 @@
+﻿@page
+@model RazorPagesDreams.Pages.Dreams.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Dream</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Dream.Title" class="control-label"></label>
+                <input asp-for="Dream.Title" class="form-control" />
+                <span asp-validation-for="Dream.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dream.DateAdded" class="control-label"></label>
+                <input asp-for="Dream.DateAdded" class="form-control" />
+                <span asp-validation-for="Dream.DateAdded" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dream.SleepQuality" class="control-label"></label>
+                <input asp-for="Dream.SleepQuality" class="form-control" />
+                <span asp-validation-for="Dream.SleepQuality" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dream.Visibility" class="control-label"></label>
+                <input asp-for="Dream.Visibility" class="form-control" />
+                <span asp-validation-for="Dream.Visibility" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
